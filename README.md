@@ -66,6 +66,6 @@ These tests use the standard Python unittest module for their test logic.  Examp
 	test01_list_users (__main__.ListFunctionTest) ... ok
 	test02_limited_users (__main__.ListFunctionTest) ... FAIL
 
-The names of the tests run, as well as their result (ok/FAIL) will be printed to the screen as they are run.
-
-The numerican names of each test run, as well as their descriptions and locations are in the overview section of this doc.
+The names of the tests run, as well as their result (ok/FAIL) will be printed to the screen as they 
+are run.  The numeric names of each test run, as well as their descriptions and locations are in the 
+overview section of this doc.
