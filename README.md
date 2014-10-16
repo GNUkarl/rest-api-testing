@@ -5,16 +5,16 @@ The included Python scripts test the Purchase, Add, and List functions of the RE
 Breakdown of what is included is below:
 
 Test1.py:
-	- Test01: Purchase function - sufficient balance purchase
-	- Test02: Purchase function - unsufficient balance purchase
-	- Test03: Purchase function - cost = string
-	- Test04: Purchase function - cost = negative integer
-	- Test05: Purchase function - cost = more than 2 decimal places integer
-	- Test06: Purchase function - cost = empty input
-	- Test07: Purchase function - item = string
-	- Test08: Purchase function - item = negative integer
-	-Test09: Purchase function - item = more than 2 decimal places integer
-	- Test10: Purchase function - item = empty input
+- Test01: Purchase function - sufficient balance purchase
+- Test02: Purchase function - unsufficient balance purchase
+- Test03: Purchase function - cost = string
+- Test04: Purchase function - cost = negative integer
+- Test05: Purchase function - cost = more than 2 decimal places integer
+- Test06: Purchase function - cost = empty input
+- Test07: Purchase function - item = string
+- Test08: Purchase function - item = negative integer
+-Test09: Purchase function - item = more than 2 decimal places integer
+- Test10: Purchase function - item = empty input
 
 Test2.py:
 	Test01: Add User function - balance = string
