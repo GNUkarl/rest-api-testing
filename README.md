@@ -13,22 +13,22 @@ Test1.py:
 - Test06: Purchase function - cost = empty input
 - Test07: Purchase function - item = string
 - Test08: Purchase function - item = negative integer
--Test09: Purchase function - item = more than 2 decimal places integer
+- Test09: Purchase function - item = more than 2 decimal places integer
 - Test10: Purchase function - item = empty input
 
 Test2.py:
-	Test01: Add User function - balance = string
-	Test02: Add User function - balance = negative integer
-	Test03: Add User function - balance = more than 2 decimal places integer
-	Test04: Add User function - balance = empty input
-	Test05: Add User function - name = empty input
+- Test01: Add User function - balance = string
+- Test02: Add User function - balance = negative integer
+- Test03: Add User function - balance = more than 2 decimal places integer
+- Test04: Add User function - balance = empty input
+- Test05: Add User function - name = empty input
 
 Test3.py:
-	Test01: List Users function - list users
-	Test02: List Users function - list users, limiting count of displayed users
+- Test01: List Users function - list users
+- Test02: List Users function - list users, limiting count of displayed users
 
 testprep.py:
-	Not an actual test, includes functions referenced by the above scripts
+- Not an actual test, includes functions referenced by the above scripts
 
 
 
