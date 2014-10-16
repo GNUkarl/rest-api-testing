@@ -62,9 +62,20 @@ OUTPUT:
 
 These tests use the standard Python unittest module for their test logic.  Example output is below:
 
-	test@localhost$ ./Test3.py http://127.0.0.1:8000
+	[test@localhost dev]$ ./Test3.py http://localhost:8000
 	test01_list_users (__main__.ListFunctionTest) ... ok
 	test02_limited_users (__main__.ListFunctionTest) ... FAIL
+	
+	======================================================================
+	FAIL: test02_limited_users (__main__.ListFunctionTest)
+	----------------------------------------------------------------------
+	Traceback (most recent call last):
+	  File "./Test3.py", line 85, in test02_limited_users
+	    self.assertEqual(results, expected_results)
+	AssertionError: 4 != 5
+	
+	----------------------------------------------------------------------
+	Ran 2 tests in 1.165s
 
 The names of the tests run, as well as their result (ok/FAIL) will be printed to the screen as they 
 are run.  The numeric names of each test run, as well as their descriptions and locations are in the 
