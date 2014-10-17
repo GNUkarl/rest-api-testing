@@ -60,6 +60,7 @@ def get_users():
 	return user_total
 
 
+
 # usage() prints a basic usage statement of how to supply the hostname argument to the script
 
 def usage():
@@ -67,6 +68,7 @@ def usage():
         print "\n\nUsage:\n"
         print sys.argv[0],"http://hostname_or_ip:8000\n\n"
 	exit()
+
 
 
 # params_check checks that a command line argument exists and validates that it's in proper URL format
@@ -80,4 +82,42 @@ def params_check():
         	        test_host = ""
 	        else:
         	        usage()
+
+
+
+# test_runner() is used to simplify boundary testing of REST API key/value pairs
+# The function takes 3 arguments:
+#
+# example_url: an actual example URL of what's being tested, ex: http://localhost:8000/users/purchase?id=3&cost=900&item=32
+# the actual site (in this case, localhost) does not matter as it's discarded. You *can* just input
+# "/users/purchase?id=3&cost=900&item=32"(no quotes) for example_url if you want to.
+#
+# test_key: name of key argument that is under test, ex: id
+#
+# test_value: content that you're actually using to test the test_key, ex: -1, "string", ""(empty input)
+
+def test_runner(example_url,test_key,test_value):
+
+
+        # If key under test is "id", don't auto-set the id value from get_users()
+        # If key under test is not "id", then get a user id from get_users() and run test with that
+
+        if test_key == "id":
+                test_url = re.sub(r"%s=\d*" % re.escape(test_key), "%s=%s" % (test_key,test_value), example_url)
+        else:
+                current_user_id = get_users()
+                test_url = re.sub(r"%s=\d*" % re.escape(test_key), "%s=%s" % (test_key,test_value), example_url)
+                test_url = re.sub(r"id=\d*", "id=%s" % (current_user_id), test_url)
+
+        # Actually try and open the test_url and make this function return the HTTP error code if one is returned
+        # from the web request, or make this function return "null" to force the test to fail
+
+        try:
+                results = "null" # Setting results var to null to fail the PYunit test, in case transaction actually goes through
+                urllib2.urlopen(test_url)
+        except urllib2.URLError as e:
+                results = str(e.code)
+
+        return results
+
 
